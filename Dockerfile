@@ -27,7 +27,8 @@ ENV UERANSIM_VERSION=v3.1.9
 WORKDIR /
 RUN wget https://github.com/aligungr/UERANSIM/archive/${UERANSIM_VERSION}.tar.gz && \
     mkdir UERANSIM && \
-    tar -zxvf ${UERANSIM_VERSION}.tar.gz -C UERANSIM --strip-components 1
+    tar -zxvf ${UERANSIM_VERSION}.tar.gz -C UERANSIM --strip-components 1 && \
+    rm ${UERANSIM_VERSION}.tar.gz
 
 WORKDIR /UERANSIM
 RUN make
